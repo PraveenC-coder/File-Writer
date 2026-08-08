@@ -1,0 +1,40 @@
+package com.jspider.FileHandling;
+
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.FileWriter;
+
+public class MainClass9 {
+	public static void main(String [] args) {
+		BufferedWriter ref = null;
+
+	try {
+	ref = new BufferedWriter(new FileWriter("C:/Module3/A.txt"));
+	ref.write("apple");
+	ref.newLine();
+	ref.write("orange");
+	ref.newLine();
+	ref.write("banana");
+	ref.newLine();
+	ref.write(97);
+	ref.newLine();
+	char [] ch = {'t','i','g','e','r'};
+	ref.write(ch);
+	ref.flush();
+	System.out.println("Wirte completed");
+	}
+	catch(IOException e) {
+		e.printStackTrace();
+	}
+	finally {
+		
+		try {
+			ref.close();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	}
+}
