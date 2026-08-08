@@ -1,0 +1,29 @@
+ package com.jspider.FileHandling;
+
+import java.io.PrintWriter;
+import java.io.IOException;
+
+public class MainClass10 {
+	public static void main(String [] args) {
+		PrintWriter ref=null;
+		try {
+			ref = new PrintWriter("C:/Module3/B.txt");
+			ref.println("jspider");
+			ref.println("software");
+			ref.println("developer");
+			ref.println("java full stack");
+			ref.println(100);
+			ref.println(7.34);
+			ref.println(true);
+			ref.flush();
+			System.out.println("completed.....");
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+		finally {
+			ref.close();
+		}
+	}
+
+}
