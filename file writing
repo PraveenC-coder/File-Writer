@@ -1,0 +1,37 @@
+package com.jspider.FileHandling;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class MainClass8 {
+
+	public static void main (String [] args) {
+		FileWriter ref = null;
+		
+		try {
+			ref=new FileWriter("C:/Module3/Demo.txt");
+			ref.write("java");
+			ref.write("\n");
+			ref.write("sql");
+			ref.write("\n");
+			ref.write("web");
+			ref.write("\n");
+			ref.write(65);
+			ref.write("\n");
+			char[] ch= {'j','2','e','e'};
+			ref.write(ch);
+			ref.flush();
+			System.out.println("write completed");
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+			}
+		finally {
+			try {
+				ref.close();
+			} catch (IOException e) {
+							e.printStackTrace();
+			}
+		}
+	}
+}
